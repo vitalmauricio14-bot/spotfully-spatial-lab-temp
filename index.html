@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="theme-color" content="#0b0d14">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="description" content="Spatial Lab temporário — prévia de parallax do Spotfully. Sem backend, sem rastreamento.">
-<title>Spotfully · Spatial Lab temporário</title>
+<title>Spotfully · Spatial Lab v2 — teste temporário</title>
 <style>
 :root{color-scheme:dark;--accent:#ffa774;--top:#503153;--mid:#201927;--bottom:#090b11}*{box-sizing:border-box}
 html{background:#07080c}body{margin:0;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -20,13 +21,22 @@ button,input{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:tran
 .song{margin:27px 0 19px;display:flex;align-items:center;justify-content:space-between;gap:9px}.songinfo{min-width:0}.song-title{font-weight:770;font-size:23px;letter-spacing:-.5px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.artist{font-size:14px;color:#ffffffa5;margin-top:5px}.like{color:#ffffffbd;background:transparent;border:0;font-size:27px;padding:7px}.like.active{color:var(--accent)}
 .seek{display:block;width:100%;height:5px;margin:0;appearance:none;-webkit-appearance:none;outline:none;background:linear-gradient(90deg,white 32%,#ffffff4d 32%);border-radius:10px}.seek::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:10px;height:10px;border-radius:50%;background:#fff}.times{display:flex;justify-content:space-between;font-size:11px;font-variant-numeric:tabular-nums;color:#ffffffa5;margin-top:11px}
 .controls{display:flex;align-items:center;justify-content:space-between;margin:19px -2px 23px}.ctrl{border:0;background:none;color:#fff;width:41px;height:48px;display:grid;place-items:center;font-size:26px}.ctrl.secondary{font-size:22px;color:#ffffff91}.ctrl.active{color:var(--accent)}.play{height:69px;width:69px;display:grid;place-items:center;border:0;border-radius:50%;background:white;color:#15161c;font-size:28px;box-shadow:0 5px 17px #0003}.bottomplayer{display:flex;align-items:center;justify-content:space-between;color:#ffffffa2;margin-bottom:14px;font-size:12px}.pill{border:1px solid #ffffff24;background:#ffffff0e;border-radius:60px;font-size:10px;font-weight:700;padding:7px 13px;letter-spacing:.4px}
-.tabs{display:grid;grid-template-columns:repeat(5,1fr);height:55px;border-radius:38px;align-items:center;background:#ffffff13;border:1px solid #ffffff27;backdrop-filter:blur(20px);padding:5px;margin:0 -7px}.tab{display:flex;align-items:center;justify-content:center;border-radius:35px;height:44px;font-size:22px;color:#ffffffa5}.tab.active{background:#ffffff28;color:white}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);height:55px;border-radius:38px;align-items:center;background:#ffffff13;border:1px solid #ffffff27;backdrop-filter:blur(20px);padding:5px;margin:0 -7px}.tab{display:flex;align-items:center;justify-content:center;border-radius:35px;height:44px;font-size:22px;color:#ffffffa5}.tab.active{background:#ffffff28;color:white}.tab{border:0;background:transparent;cursor:pointer}
 .lab{margin:12px 11px 0;padding:19px 17px;background:linear-gradient(140deg,#22232c,#111218);border:1px solid #ffffff1a;border-radius:20px}.lab-title{font-size:15px;font-weight:780}.lab-title em{font-style:normal;color:#ffbf88}.sub{margin:7px 0 0;font-size:12px;line-height:1.55;color:#a6a5b1}
 .modes{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;border-radius:13px;padding:4px;background:#0d0e14;margin:17px 0}.mode{font-size:12px;font-weight:640;border:0;background:none;padding:12px 1px;border-radius:10px;color:#9e9da8}.mode.active{color:#fff;background:#3b3b46;box-shadow:0 2px 6px #0004}.mode:disabled{opacity:.4}
 .row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 0;font-size:13px}.depth{font-size:12px;color:var(--accent);border-radius:8px;background:#ffffff13;padding:6px 10px;font-variant-numeric:tabular-nums}.range{width:100%;accent-color:var(--accent);margin:3px 0}.check{width:18px;height:18px;accent-color:#ffac7f}.divider{height:1px;background:#ffffff1a;margin:14px 0}.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:16px}.action{font-size:13px;font-weight:730;background:#33343e;color:white;padding:13px 5px;border-radius:11px;border:1px solid #ffffff26}.action.primary{background:white;color:#12131a;border-color:white}.sensor-btn{width:100%;margin-top:9px;border:1px solid #ffc68d80;border-radius:12px;color:#171719;background:linear-gradient(100deg,#ffdfa9,#febc83);padding:13px 10px;font-weight:750;font-size:13px;display:none}
 .status{margin-top:13px;color:#b2b1bd;line-height:1.6;font-size:12px;min-height:32px}.readout{display:flex;justify-content:space-between;gap:8px;font-size:10px;color:#8c8d9b;margin-top:12px;font-variant-numeric:tabular-nums}.dot{display:inline-block;height:7px;width:7px;border-radius:50%;background:#7c7c86;margin-right:4px}.dot.ok{background:#55e6a8}.warning{margin-top:13px;padding:10px 12px;font-size:11px;line-height:1.5;color:#bbb8c7;background:#ffffff09;border:1px solid #ffffff13;border-radius:10px}
 @media(min-width:481px){.app{margin:18px auto}.player{border:1px solid #ffffff17;border-radius:25px}.lab{margin:15px 0}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.quick-sensor{display:flex;justify-content:center;align-items:center;gap:8px;width:100%;margin:13px 0 2px;padding:14px 10px;background:linear-gradient(105deg,#ffe0ad,#ffba84);border:0;border-radius:13px;color:#211923;font-size:14px;font-weight:800;box-shadow:0 6px 24px #0004}
+.quick-sensor.ready{background:linear-gradient(105deg,#9af4c6,#59d2a7)}
+.quick-hint{text-align:center;color:#ffdfb9;font-size:11px;margin:5px 0 1px;line-height:1.45}
+.info-panel{margin-top:14px;padding:12px;background:#10121a;border:1px solid #ffffff23;border-radius:12px;display:grid;gap:8px;font-size:11px;line-height:1.45}
+.info-line{display:flex;justify-content:space-between;gap:8px;color:#c3c1c9}.info-line span:last-child{font-weight:650;text-align:right;color:#ecb991}
+.recenter{width:100%;border:1px solid #ffffff2d;color:#fff;background:#2a2c38;padding:12px;border-radius:10px;margin-top:8px;font-size:13px;font-weight:650}
+.troubleshoot{font-size:11px;line-height:1.6;color:#bab7c4;margin:10px 0 0}
+.art:after{content:"";position:absolute;inset:0;pointer-events:none;border:1px solid #ffffff22;border-radius:13px}
 </style>
 </head>
 <body>
@@ -49,24 +59,34 @@ button,input{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:tran
     </div>
     <span class="art-label">✦ SPATIAL SCENE</span>
   </div></div>
+  <button type="button" id="quickSensor" class="quick-sensor">📱 ATIVAR GIROSCÓPIO REAL</button>
+  <p class="quick-hint" id="quickHint">No Safari do iPhone, toque acima e autorize Movimento e Orientação.</p>
   <div class="song"><div class="songinfo"><div id="songTitle" class="song-title">Spatial Dreams</div><div class="artist" id="artist">Spotfully • Demo</div></div><button class="like" id="like" aria-label="Curtir faixa demonstrativa">♡</button></div>
   <input class="seek" id="seek" type="range" min="0" max="226" value="74" aria-label="Progresso simulado da música">
   <div class="times"><span id="time">1:14</span><span>3:46</span></div>
   <div class="controls"><button class="ctrl secondary" id="shuffle" aria-label="Aleatório">⤨</button><button class="ctrl" id="previous" aria-label="Faixa anterior">⏮</button><button class="play" id="play" aria-label="Reprodução visual simulada">▶</button><button class="ctrl" id="next" aria-label="Próxima faixa">⏭</button><button class="ctrl secondary" id="repeat" aria-label="Repetir">↻</button></div>
   <div class="bottomplayer"><span style="font-size:20px">♬</span><span class="pill">✦ EFEITO ESPACIAL</span><span style="font-size:19px">≡</span></div>
-  <div class="tabs" aria-label="Prévia da navegação do Spotfully"><span class="tab active">⌂</span><span class="tab">⌕</span><span class="tab">≡</span><span class="tab">＋</span><span class="tab">⚙</span></div>
+  <div class="tabs" aria-label="Prévia da navegação do Spotfully"><button class="tab active" data-tab="Início" aria-label="Início">⌂</button><button class="tab" data-tab="Busca" aria-label="Busca">⌕</button><button class="tab" data-tab="Biblioteca" aria-label="Biblioteca">≡</button><button class="tab" data-tab="Playlists" aria-label="Playlists">＋</button><button class="tab" data-tab="Configurações" aria-label="Configurações">⚙</button></div>
 </section>
 <section class="lab" id="lab">
   <div class="lab-title"><em>✦</em> Laboratório espacial</div>
   <p class="sub">Teste a capa com movimento real do iPhone no Safari. Nada é enviado a um servidor.</p>
-  <div class="modes"><button class="mode" data-mode="simulation">Simulação</button><button class="mode active" data-mode="gyro">Giroscópio</button><button class="mode" data-mode="drag">Arrastar</button></div>
+  <div class="modes"><button class="mode active" data-mode="simulation">Simulação</button><button class="mode" data-mode="gyro">Giroscópio</button><button class="mode" data-mode="drag">Arrastar</button></div>
   <button id="enableSensor" class="sensor-btn">◉ Ativar giroscópio do iPhone</button>
-  <div class="row"><b>Profundidade 3D</b><span class="depth" id="depthLabel">22 pt</span></div><input id="depth" class="range" type="range" min="0" max="40" step="1" value="22" aria-label="Profundidade 3D">
+  <div class="row"><b>Profundidade 3D</b><span class="depth" id="depthLabel">30 pt</span></div><input id="depth" class="range" type="range" min="0" max="60" step="1" value="30" aria-label="Profundidade 3D">
   <div class="row"><label for="shadow">Sombra do sujeito</label><input type="checkbox" id="shadow" class="check"></div>
   <div class="divider"></div><div class="row"><label for="cutout">Visualizar somente o recorte</label><input type="checkbox" id="cutout" class="check"></div>
   <div class="actions"><button class="action primary" id="choose">▧ Escolher foto</button><button class="action" id="reset">↻ Restaurar demo</button></div><input type="file" accept="image/*" id="file" hidden>
   <div class="status" id="status" role="status">Toque em “Ativar giroscópio do iPhone” e permita o acesso no Safari.</div>
   <div class="readout"><span><i class="dot" id="sensorDot"></i><span id="sensorReadout">Sensor aguardando</span></span><span id="xy">X 0.00 · Y 0.00</span></div>
+  <button id="recenter" class="recenter">⌖ Recalibrar posição do iPhone</button>
+  <div class="info-panel" aria-label="Diagnóstico do giroscópio">
+    <div class="info-line"><span>Permissão</span><span id="diagnosticPermission">Aguardando toque</span></div>
+    <div class="info-line"><span>Ambiente seguro (HTTPS)</span><span id="diagnosticHTTPS">Verificando</span></div>
+    <div class="info-line"><span>Dados do sensor</span><span id="diagnosticData">Aguardando</span></div>
+    <div class="info-line"><span>Movimento do aparelho</span><span id="diagnosticAngles">Sem leitura</span></div>
+  </div>
+  <p class="troubleshoot">Se o sensor não responder: abra o endereço diretamente no Safari (não no navegador interno do ChatGPT), toque em Ativar e aceite a permissão. Mesmo sem sensor, os modos Simulação e Arrastar devem funcionar.</p>
   <div class="warning">Prévia temporária. O efeito usa dados reais de inclinação no Safari, mas o recorte automático de pessoas/objetos do código Swift (Vision) só funciona no app nativo. Aqui, fotos escolhidas recebem uma máscara central aproximada. A reprodução musical também é simulada.</div>
 </section>
 </main>
@@ -76,71 +96,153 @@ button,input{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:tran
 const $=id=>document.getElementById(id);
 const art=$('art'),background=$('bg'),foreground=$('fg'),status=$('status');
 const clamp=(x,min=-1,max=1)=>Math.max(min,Math.min(max,x));
-let mode='gyro',depth=22,holding=false,drag={x:0,y:0},view={x:0,y:0};
-let baseline=null,reading={x:0,y:0},sensorOK=false,lastSensor=0,listenAttached=false,sensorPermission=false;
+let mode='simulation',depth=30,holding=false,drag={x:0,y:0},view={x:0,y:0};
+let baseline=null,gravityRef=null,reading={x:0,y:0},sensorOK=false,lastSensor=0,lastOrientation=0,listenAttached=false,permission='Aguardando toque';
 let playing=false,position=74,lastTick=0,trackIndex=0,photoURL=null,repeat=false;
-const reduceMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
-const tracks=[{title:'Spatial Dreams',accent:'#ffa774',top:'#503153',mid:'#201927'},{title:'Sunset Motion',accent:'#ff967f',top:'#75395a',mid:'#2a1729'},{title:'Midnight Waves',accent:'#9cbbff',top:'#2a416c',mid:'#101b34'}];
+let lastTap=0;
+const reducedMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const tracks=[{title:'Spatial Dreams',accent:'#ffa774',top:'#503153',mid:'#201927'},
+{title:'Sunset Motion',accent:'#ff967f',top:'#75395a',mid:'#2a1729'},
+{title:'Midnight Waves',accent:'#9cbbff',top:'#2a416c',mid:'#101b34'}];
 function message(str){status.textContent=str}
-function modeSet(next){mode=next;document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===next));$('enableSensor').style.display=next==='gyro'?'block':'none';if(next==='gyro'){if(sensorOK){message('Giroscópio ativo. Incline o iPhone e toque duas vezes na capa para recentralizar.')}else{message('Toque no botão e permita o acesso aos sensores no Safari.')} }else if(next==='drag'){message('Arraste a capa com o dedo. Ao soltar, ela volta suavemente.')}else{message('Simulação automática ativa.')} }
+function recenter(){baseline=null;gravityRef=null;reading={x:0,y:0};message('Posição recentralizada. Mantenha o iPhone na posição desejada.')}
+function sensorReceived(x,y,source){
+ if(mode!=='gyro')return;
+ reading={x:clamp(x),y:clamp(y)};lastSensor=performance.now();
+ $('diagnosticData').textContent=source+' · recebendo';
+ if(!sensorOK){sensorOK=true;$('sensorDot').classList.add('ok');$('sensorReadout').textContent='Sensor conectado';
+  $('quickSensor').classList.add('ready');$('quickSensor').textContent='✓ GIROSCÓPIO CONECTADO';
+  $('quickHint').textContent='Incline o iPhone para ver a capa reagir';
+  message('Sensor conectado! Incline o iPhone. Se quiser, use Recalibrar.')}
+}
 function onOrientation(e){
  if(mode!=='gyro'||!Number.isFinite(e.beta)||!Number.isFinite(e.gamma))return;
- let beta=e.beta,gamma=e.gamma;
+ const beta=e.beta,gamma=e.gamma;
  if(!baseline)baseline={beta,gamma};
- let dBeta=beta-baseline.beta;dBeta=((dBeta+180)%360+360)%360-180;
- let dGamma=gamma-baseline.gamma;
- reading.x=clamp(dGamma/21);reading.y=clamp(dBeta/21);
- lastSensor=performance.now();
- if(!sensorOK){sensorOK=true;$('sensorDot').classList.add('ok');$('sensorReadout').textContent='Sensor em tempo real';message('Funcionando! Incline o iPhone. Toque duas vezes na capa para recentralizar.');$('enableSensor').textContent='✓ Giroscópio ativo';}
- }
-async function enableSensor(){
- if(!window.isSecureContext){message('É necessário abrir esta página em HTTPS no Safari (GitHub Pages).');return}
- if(!('DeviceOrientationEvent' in window)){message('Este navegador não expõe a API do giroscópio. Abra no Safari do iPhone.');return}
- try{
-   if(typeof DeviceOrientationEvent.requestPermission==='function'){
-     const permission=await DeviceOrientationEvent.requestPermission();
-     if(permission!=='granted'){message('Permissão negada. Confira Ajustes do Safari e tente novamente.');return}
-   }
-   if(!listenAttached){window.addEventListener('deviceorientation',onOrientation,true);listenAttached=true}
-   baseline=null;sensorPermission=true;message('Permissão solicitada. Incline o aparelho para verificar a leitura.');
-   setTimeout(()=>{if(mode==='gyro'&&!sensorOK)message('Sem dados de inclinação. Confira se abriu a URL HTTPS no Safari do iPhone e se o acesso a movimento está permitido.')},2700);
- }catch(error){message('O Safari não liberou o sensor: '+(error?.message||'permissão indisponível'))}
+ const db=((beta-baseline.beta+540)%360)-180;
+ const dg=((gamma-baseline.gamma+540)%360)-180;
+ lastOrientation=performance.now();
+ $('diagnosticAngles').textContent='β '+beta.toFixed(1)+'° · γ '+gamma.toFixed(1)+'°';
+ sensorReceived(dg/16,db/16,'Orientação');
 }
-function refreshTime(){let s=Math.round(position);$('time').textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');$('seek').value=String(s);$('seek').style.background=`linear-gradient(90deg,white ${(s/226*100).toFixed(2)}%,#ffffff55 0%)`}
-function changeTrack(step){trackIndex=(trackIndex+step+tracks.length)%tracks.length;const t=tracks[trackIndex];$('songTitle').textContent=t.title;document.documentElement.style.setProperty('--accent',t.accent);document.documentElement.style.setProperty('--top',t.top);document.documentElement.style.setProperty('--mid',t.mid);position=0;refreshTime();$('demoBG').style.filter=trackIndex===2?'hue-rotate(135deg)':trackIndex===1?'hue-rotate(-20deg)':'none';$('demoFG').style.filter=trackIndex===2?'hue-rotate(135deg)':'none'}
+function onMotion(e){
+ if(mode!=='gyro'||performance.now()-lastOrientation<1500)return;
+ const a=e.accelerationIncludingGravity;
+ if(!a||!Number.isFinite(a.x)||!Number.isFinite(a.y))return;
+ if(!gravityRef)gravityRef={x:a.x,y:a.y};
+ const x=(a.x-gravityRef.x)/4.5,y=(a.y-gravityRef.y)/4.5;
+ $('diagnosticAngles').textContent='X '+a.x.toFixed(2)+' · Y '+a.y.toFixed(2);
+ sensorReceived(x,y,'Aceleração');
+}
+function modeSet(next){
+ mode=next;
+ document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===next));
+ $('enableSensor').style.display=next==='gyro'?'block':'none';
+ if(next==='gyro')message(sensorOK?'Giroscópio selecionado. Incline o iPhone.':'Giroscópio selecionado. Toque em Ativar giroscópio real.');
+ else if(next==='drag')message('Arraste a capa com o dedo; solte para retornar ao centro.');
+ else message('Simulação ativa: a capa deve se movimentar sem precisar de permissões.');
+}
+async function enableSensor(){
+ modeSet('gyro');
+ if(!window.isSecureContext){message('Sem HTTPS. Abra a URL https:// no Safari do iPhone.');$('diagnosticPermission').textContent='HTTPS necessário';return}
+ if(!('DeviceOrientationEvent' in window)&&!('DeviceMotionEvent' in window)){
+  message('Esse navegador não disponibiliza sensores. Abra a página no Safari do iPhone.');$('diagnosticPermission').textContent='API indisponível';return;
+ }
+ $('diagnosticPermission').textContent='Solicitando...';
+ try{
+  // Both permission requests are initiated inside the original click gesture.
+  // Calling the second only after an await can lose iOS user activation.
+  const requests=[];
+  if(window.DeviceOrientationEvent&&typeof DeviceOrientationEvent.requestPermission==='function')requests.push(DeviceOrientationEvent.requestPermission());
+  if(window.DeviceMotionEvent&&typeof DeviceMotionEvent.requestPermission==='function')requests.push(DeviceMotionEvent.requestPermission());
+  const grants=await Promise.allSettled(requests);
+  if(grants.some(g=>g.status==='rejected'||g.value!=='granted')){
+   permission='Negada ou bloqueada';$('diagnosticPermission').textContent=permission;
+   message('O iPhone não liberou os sensores. Abra o site no Safari e permita Movimento e Orientação.');return;
+  }
+  permission='Concedida';$('diagnosticPermission').textContent=permission;
+  baseline=null;gravityRef=null;
+  if(!listenAttached){
+   window.addEventListener('deviceorientation',onOrientation,true);
+   window.addEventListener('deviceorientationabsolute',onOrientation,true);
+   window.addEventListener('devicemotion',onMotion,true);
+   listenAttached=true;
+  }
+  message('Permissão concedida. Mexa o iPhone e confira as leituras abaixo.');
+  $('quickHint').textContent='Mova o iPhone e observe o indicador de leitura';
+  window.setTimeout(()=>{if(mode==='gyro'&&performance.now()-lastSensor>3000){
+    $('diagnosticData').textContent='Nenhum evento recebido';
+    $('sensorDot').classList.remove('ok');$('sensorReadout').textContent='Sensor sem sinal';
+    message('Permissão concedida, mas o navegador não enviou leituras. Abra diretamente no Safari, não dentro do ChatGPT.');
+  }},3500);
+ }catch(error){permission='Erro';$('diagnosticPermission').textContent=permission;message('Falha ao pedir permissão: '+String(error&&error.message||error))}
+}
+function refreshTime(){const s=Math.round(position);$('time').textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');$('seek').value=String(s);$('seek').style.background=`linear-gradient(90deg,white ${(s/226*100).toFixed(2)}%,#ffffff55 0%)`}
+function changeTrack(step){trackIndex=(trackIndex+step+tracks.length)%tracks.length;const t=tracks[trackIndex];
+ $('songTitle').textContent=t.title;document.documentElement.style.setProperty('--accent',t.accent);
+ document.documentElement.style.setProperty('--top',t.top);document.documentElement.style.setProperty('--mid',t.mid);
+ position=0;refreshTime();$('demoBG').style.filter=trackIndex===2?'hue-rotate(135deg)':trackIndex===1?'hue-rotate(-20deg)':'none';$('demoFG').style.filter=trackIndex===2?'hue-rotate(135deg)':'none'}
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>modeSet(b.dataset.mode)));
-$('enableSensor').addEventListener('click',enableSensor);
+$('enableSensor').addEventListener('click',enableSensor);$('quickSensor').addEventListener('click',enableSensor);
+$('recenter').addEventListener('click',recenter);
 $('depth').addEventListener('input',e=>{depth=Number(e.target.value);$('depthLabel').textContent=depth+' pt'});
 $('shadow').addEventListener('change',e=>foreground.style.filter=e.target.checked?'drop-shadow(0px 12px 15px rgba(0,0,0,.5))':'none');
 $('cutout').addEventListener('change',e=>{background.style.opacity=e.target.checked?'0':'1';art.classList.toggle('show-cutout',e.target.checked)});
 $('goSettings').addEventListener('click',()=>$('lab').scrollIntoView({behavior:'smooth',block:'center'}));
 $('choose').addEventListener('click',()=>$('file').click());
-$('file').addEventListener('change',e=>{const file=e.target.files?.[0];if(!file)return;if(!file.type.startsWith('image/')){message('Escolha uma imagem válida.');return}if(photoURL)URL.revokeObjectURL(photoURL);photoURL=URL.createObjectURL(file);$('photoBG').src=photoURL;$('photoFG').src=photoURL;for(const id of ['photoBG','photoFG'])$(id).style.display='block';for(const id of ['demoBG','demoFG'])$(id).style.display='none';message('Imagem carregada localmente. O recorte é aproximado nesta prévia, não é segmentação Vision.')});
-$('reset').addEventListener('click',()=>{if(photoURL)URL.revokeObjectURL(photoURL);photoURL=null;for(const id of ['photoBG','photoFG'])$(id).style.display='none';for(const id of ['demoBG','demoFG'])$(id).style.display='block';$('cutout').checked=false;background.style.opacity='1';art.classList.remove('show-cutout');$('file').value='';message('Cena de demonstração restaurada.')});
-art.addEventListener('pointerdown',e=>{if(mode!=='drag')return;holding=true;art.setPointerCapture(e.pointerId);art.dataset.downX=e.clientX;art.dataset.downY=e.clientY});
-art.addEventListener('pointermove',e=>{if(!holding||mode!=='drag')return;drag.x=clamp((e.clientX-Number(art.dataset.downX))/120);drag.y=clamp((e.clientY-Number(art.dataset.downY))/120)});
-art.addEventListener('pointerup',()=>holding=false);art.addEventListener('pointercancel',()=>holding=false);
-art.addEventListener('dblclick',()=>{baseline=null;message('Inclinação recentralizada.')});
-$('like').addEventListener('click',e=>{let on=e.currentTarget.classList.toggle('active');e.currentTarget.textContent=on?'♥':'♡'});
+$('file').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(!f)return;
+ if(!f.type.startsWith('image/')){message('Escolha uma imagem válida.');return}
+ if(photoURL)URL.revokeObjectURL(photoURL);photoURL=URL.createObjectURL(f);
+ $('photoBG').src=photoURL;$('photoFG').src=photoURL;
+ ['photoBG','photoFG'].forEach(id=>$(id).style.display='block');['demoBG','demoFG'].forEach(id=>$(id).style.display='none');
+ message('Foto carregada no próprio iPhone. A máscara da prévia web é aproximada, não é o Vision do app nativo.');
+});
+$('reset').addEventListener('click',()=>{if(photoURL)URL.revokeObjectURL(photoURL);photoURL=null;
+ ['photoBG','photoFG'].forEach(id=>$(id).style.display='none');['demoBG','demoFG'].forEach(id=>$(id).style.display='block');
+ $('cutout').checked=false;background.style.opacity='1';art.classList.remove('show-cutout');$('file').value='';message('Cena de demonstração restaurada.');
+});
+art.addEventListener('pointerdown',e=>{
+ if(mode==='simulation')modeSet('drag');
+ holding=true;art.setPointerCapture(e.pointerId);art.dataset.downX=e.clientX;art.dataset.downY=e.clientY;
+});
+art.addEventListener('pointermove',e=>{if(!holding)return;drag.x=clamp((e.clientX-Number(art.dataset.downX))/85);drag.y=clamp((e.clientY-Number(art.dataset.downY))/85)});
+function stopDrag(){holding=false}
+art.addEventListener('pointerup',e=>{stopDrag();const now=performance.now();if(now-lastTap<420)recenter();lastTap=now});
+art.addEventListener('pointercancel',stopDrag);
+$('like').addEventListener('click',e=>{const on=e.currentTarget.classList.toggle('active');e.currentTarget.textContent=on?'♥':'♡'});
 $('shuffle').addEventListener('click',e=>e.currentTarget.classList.toggle('active'));
 $('repeat').addEventListener('click',e=>{repeat=e.currentTarget.classList.toggle('active')});
 $('previous').addEventListener('click',()=>changeTrack(-1));$('next').addEventListener('click',()=>changeTrack(1));
-$('play').addEventListener('click',()=>{playing=!playing;$('play').textContent=playing?'Ⅱ':'▶';message(playing?'Reprodução visual simulada (sem áudio).':'Reprodução visual pausada.')});
+$('play').addEventListener('click',()=>{playing=!playing;$('play').textContent=playing?'Ⅱ':'▶';message(playing?'Reprodução visual simulada, sem áudio.':'Reprodução visual pausada.')});
 $('seek').addEventListener('input',e=>{position=Number(e.target.value);refreshTime()});
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{
+ document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));
+ if(b.dataset.tab==='Configurações')$('lab').scrollIntoView({behavior:'smooth',block:'center'});
+ else message('Aba '+b.dataset.tab+' representada apenas no protótipo. O teste real é da capa espacial.');
+}));
 function frame(t){
  const dt=lastTick?Math.min(.06,(t-lastTick)/1000):0;lastTick=t;
  if(playing){position+=dt;if(position>226){position=repeat?0:226;if(!repeat){playing=false;$('play').textContent='▶'}}refreshTime()}
- let target={x:0,y:0};if(!reduceMotion){if(mode==='simulation')target={x:Math.sin(t*.00085),y:.65*Math.cos(t*.00072)};if(mode==='drag'){if(!holding){drag.x*=.88;drag.y*=.88}target=drag};if(mode==='gyro'&&sensorOK)target=reading}
- view.x+=(target.x-view.x)*.16;view.y+=(target.y-view.y)*.16;
+ let target={x:0,y:0};
+ // Explicit Spatial Lab interactions override iOS Reduce Motion. Otherwise people
+ // who enabled accessibility preferences cannot test even drag and gyro.
+ if(holding){target=drag}
+ else if(mode==='simulation'){target={x:Math.sin(t*.0009),y:.65*Math.cos(t*.00078)}}
+ else if(mode==='drag'){drag.x*=.88;drag.y*=.88;target=drag}
+ else if(mode==='gyro'){target=sensorOK?reading:{x:0,y:0}}
+ view.x+=(target.x-view.x)*.22;view.y+=(target.y-view.y)*.22;
  const x=view.x,y=view.y;
- background.style.transform=`translate3d(${(-x*depth*.4).toFixed(2)}px,${(-y*depth*.4).toFixed(2)}px,0) scale(1.13)`;
- foreground.style.transform=`translate3d(${(x*depth*.6).toFixed(2)}px,${(y*depth*.6).toFixed(2)}px,0) scale(1.13)`;
- art.style.transform=`perspective(950px) rotateY(${(x*2.5).toFixed(2)}deg) rotateX(${(-y*2.5).toFixed(2)}deg)`;
- $('xy').textContent=`X ${x.toFixed(2)} · Y ${y.toFixed(2)}`;
- if(mode==='gyro'&&sensorOK&&t-lastSensor>5000){$('sensorDot').classList.remove('ok');$('sensorReadout').textContent='Sensor sem dados recentes'} else if(sensorOK){$('sensorDot').classList.add('ok');$('sensorReadout').textContent='Sensor em tempo real'}
+ background.style.transform=`translate3d(${(-x*depth*.4).toFixed(2)}px,${(-y*depth*.4).toFixed(2)}px,0) scale(1.16)`;
+ foreground.style.transform=`translate3d(${(x*depth*.6).toFixed(2)}px,${(y*depth*.6).toFixed(2)}px,0) scale(1.16)`;
+ art.style.transform=`perspective(950px) rotateY(${(x*3.8).toFixed(2)}deg) rotateX(${(-y*3.8).toFixed(2)}deg)`;
+ $('xy').textContent='X '+x.toFixed(2)+' · Y '+y.toFixed(2);
+ if(mode==='gyro'&&sensorOK&&t-lastSensor>5000){$('sensorDot').classList.remove('ok');$('sensorReadout').textContent='Sem leituras recentes';$('diagnosticData').textContent='Aguardando novos eventos'}
+ else if(sensorOK){$('sensorDot').classList.add('ok');$('sensorReadout').textContent='Sensor conectado'}
  requestAnimationFrame(frame);
 }
-modeSet('gyro');refreshTime();requestAnimationFrame(frame);
+$('diagnosticHTTPS').textContent=window.isSecureContext?'Sim':'Não';
+if(reducedMotion){$('quickHint').textContent='O teste funciona mesmo com “Reduzir Movimento” ativado.'}
+modeSet('simulation');refreshTime();requestAnimationFrame(frame);
 })();
 </script>
 </body>
